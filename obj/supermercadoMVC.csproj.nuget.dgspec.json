@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vitor\\Desktop\\code\\supermercadoMVC\\supermercadoMVC.csproj": {}
+    "c:\\Users\\Vitor\\Desktop\\code\\supermercadoMVC\\supermercadoMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vitor\\Desktop\\code\\supermercadoMVC\\supermercadoMVC.csproj": {
+    "c:\\Users\\Vitor\\Desktop\\code\\supermercadoMVC\\supermercadoMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vitor\\Desktop\\code\\supermercadoMVC\\supermercadoMVC.csproj",
+        "projectUniqueName": "c:\\Users\\Vitor\\Desktop\\code\\supermercadoMVC\\supermercadoMVC.csproj",
         "projectName": "supermercadoMVC",
-        "projectPath": "C:\\Users\\Vitor\\Desktop\\code\\supermercadoMVC\\supermercadoMVC.csproj",
+        "projectPath": "c:\\Users\\Vitor\\Desktop\\code\\supermercadoMVC\\supermercadoMVC.csproj",
         "packagesPath": "C:\\Users\\Vitor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vitor\\Desktop\\code\\supermercadoMVC\\obj\\",
+        "outputPath": "c:\\Users\\Vitor\\Desktop\\code\\supermercadoMVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Vitor\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -21,7 +21,6 @@
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,6 +38,22 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
