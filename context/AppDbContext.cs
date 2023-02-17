@@ -12,6 +12,6 @@ namespace supermercadoMVC.context
         {
         }
 
-        
+        public DbSet<Models.Produto> Produtos { get; set; }
     }
 }
