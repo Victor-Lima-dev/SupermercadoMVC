@@ -1,0 +1,37 @@
+@model IEnumerable<supermercadoMVC.Models.Produto>
+
+<div class="container-fluid">
+	<div class="row">
+    @{
+        foreach (var produto in Model)
+        {         
+		<div class="col-md-4">
+			<div class="card">
+				<h5 class="card-header">
+					@produto.Nome
+				</h5>
+				<div class="card-body">
+					<p class="card-text">
+						@produto.Categoria
+					</p>
+					<p class="card-text">
+						@produto.Descricao
+					</p>
+				</div>
+				<div class="row">
+                    <div class="card-footer col-md-6">
+                        <p>Quantidade Estoque @produto.Quantidade</p>
+
+                    </div>
+                    <div class="card-footer col-md-6">
+                       <P> Preço @produto.Preco</P> 
+                    </div>
+
+                </div>
+			</div>
+		</div>
+        }
+    }
+	</div>
+</div>
+
