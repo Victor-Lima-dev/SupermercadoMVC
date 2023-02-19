@@ -1,0 +1,13 @@
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Produtos
+  </button>
+  <ul class="dropdown-menu">
+
+@foreach (var item in Model)
+{
+    <li><a class="dropdown-item" asp-controller="Produtos" asp-action="ListarTodosProdutos" asp-route-categoria = "@item">@item</a></li>
+}
+
+  </ul>
+</div>
