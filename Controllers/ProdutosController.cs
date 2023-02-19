@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using supermercadoMVC.context;
+using supermercadoMVC.Models;
 
 namespace supermercadoMVC.Controllers
 {
@@ -22,18 +23,30 @@ namespace supermercadoMVC.Controllers
             _context = context;
         }
 
-         //route
-        [Route("ListarTodosProdutos")]
-   
-        //assincrono
-        public async Task<IActionResult> ListarTodosProdutos()
-        {
-            //criar uma lista de produtos
-            var listaDeProdutos = await _context.Produtos.ToListAsync();
+        //route
+        [Route("ListarTodosProdutos/{categoria?}")]
           
-            //retornar a view com a lista de produtos
+        //assincrono
+        public async Task<IActionResult> ListarTodosProdutos(string categoria)
+        {
+            IEnumerable<Produto> listaDeProdutos;
+            string CategoriaEscolhida = string.Empty;
+            if (string.IsNullOrEmpty(categoria))
+            {
+                listaDeProdutos = await _context.Produtos.OrderBy(p => p.Nome).ToListAsync();
+                CategoriaEscolhida = "Todos os produtos";
+            }
+            else
+            {
+                listaDeProdutos = await _context.Produtos.Where(p => p.Categoria.Equals(categoria)).OrderBy(p => p.Nome).ToListAsync();
+                CategoriaEscolhida = categoria;
+            }
+            ViewBag.CategoriaEscolhida = CategoriaEscolhida;
+
             return View(listaDeProdutos);
         }
+
+        
     
     }
 }
