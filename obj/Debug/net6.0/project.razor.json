@@ -18374,11 +18374,6 @@
   "RootNamespace": "supermercadoMVC",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\Vitor\\Desktop\\code\\supermercadoMVC\\Views\\Produtos\\BuscarCategoria.cshtml",
-      "TargetPath": "Views\\Produtos\\BuscarCategoria.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Vitor\\Desktop\\code\\supermercadoMVC\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -18406,6 +18401,11 @@
     {
       "FilePath": "c:\\Users\\Vitor\\Desktop\\code\\supermercadoMVC\\Views\\Produtos\\ListarTodosProdutos.cshtml",
       "TargetPath": "Views\\Produtos\\ListarTodosProdutos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Vitor\\Desktop\\code\\supermercadoMVC\\Views\\Produtos\\Detalhes.cshtml",
+      "TargetPath": "Views\\Produtos\\Detalhes.cshtml",
       "FileKind": "mvc"
     },
     {

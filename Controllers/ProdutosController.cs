@@ -25,7 +25,7 @@ namespace supermercadoMVC.Controllers
 
         //route
         [Route("ListarTodosProdutos/{categoria?}")]
-          
+
         //assincrono
         public async Task<IActionResult> ListarTodosProdutos(string categoria)
         {
@@ -46,6 +46,12 @@ namespace supermercadoMVC.Controllers
             return View(listaDeProdutos);
         }
 
+        [Route("Detalhes/{id}")]
+        public async Task<IActionResult> Detalhes(int id)
+        {
+            var produto = await _context.Produtos.FindAsync(id);
+            return View(produto);
+        }
         
     
     }
