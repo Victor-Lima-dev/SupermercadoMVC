@@ -20,6 +20,9 @@
                     <div class="card-footer col-md-6">
                        <P> Preço @Model.Preco</P> 
                     </div>
+					<div>
+						<a asp-controller="Produtos" asp-action="Detalhes" asp-route-id="@Model.ProdutoId" class="btn btn-primary">Detalhes</a>
+					</div>
                 </div>
 			</div>
 		</div>
