@@ -1,0 +1,25 @@
+@model supermercadoMVC.Models.Produto
+
+<div class="col-md-4">
+			<div class="card">
+				<h5 class="card-header">
+					@Model.Nome
+				</h5>
+				<div class="card-body">
+					<p class="card-text">
+						@Model.Categoria
+					</p>
+					<p class="card-text">
+						@Model.Descricao
+					</p>
+				</div>
+				<div class="row">
+                    <div class="card-footer col-md-6">
+                        <p>Quantidade Estoque @Model.Quantidade</p>
+                    </div>
+                    <div class="card-footer col-md-6">
+                       <P> Preço @Model.Preco</P> 
+                    </div>
+                </div>
+			</div>
+		</div>
