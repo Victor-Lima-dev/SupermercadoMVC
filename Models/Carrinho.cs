@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using supermercadoMVC.context;
 
 namespace supermercadoMVC.Models
 {
@@ -81,6 +83,22 @@ namespace supermercadoMVC.Models
             return ItensCarrinho ?? (ItensCarrinho = _context.ItensCarrinho.Where(c => c.CarrinhoId == CarrinhoId)
                 .Include(s => s.Produto)
                 .ToList());
+        }
+
+        public void LimparCarrinho()
+        {
+            var itensCarrinho = _context.ItensCarrinho.Where(c => c.CarrinhoId == CarrinhoId);
+
+            _context.ItensCarrinho.RemoveRange(itensCarrinho);
+
+            _context.SaveChanges();
+        }
+
+        public decimal GetCarrinhoTotal()
+        {
+            var total = _context.ItensCarrinho.Where(c => c.CarrinhoId == CarrinhoId)
+                .Select(c => c.Produto.Preco * c.Quantidade).Sum();
+            return total;
         }
 
     }

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using supermercadoMVC.context;
+using supermercadoMVC.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,11 +9,12 @@ builder.Services.AddControllersWithViews();
 // registrar banco de dados
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.services.AddSingletone<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddScoped(sp => Carrinho.GetCarrinho(sp));
 
 
-builder.services.AddMemoryCache();
-builder.services.AddSession();
+builder.Services.AddMemoryCache();
+builder.Services.AddSession();
 
 var app = builder.Build();
 
