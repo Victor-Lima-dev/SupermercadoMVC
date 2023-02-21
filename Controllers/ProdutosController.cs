@@ -53,6 +53,21 @@ namespace supermercadoMVC.Controllers
             return View(produto);
         }
         
-    
+        public ViewResult Pesquisar(string procurarString)
+        {
+            string _pesquisarString = procurarString;
+            IEnumerable<Produto> listaDeProdutos;
+            string _CategoriaEscolhida = string.Empty;
+
+            if (string.IsNullOrEmpty(_pesquisarString))
+            {
+                listaDeProdutos = _context.Produtos.OrderBy(p => p.Nome);
+            }
+            else
+            {
+                listaDeProdutos = _context.Produtos.Where(p => p.Nome.ToLower().Contains(_pesquisarString.ToLower()));
+            }
+            return View("~/Views/Produtos/ListarTodosProdutos.cshtml", listaDeProdutos);
+        }
     }
 }
