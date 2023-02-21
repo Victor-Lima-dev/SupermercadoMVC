@@ -1,2 +1,40 @@
 @model supermercadoMVC.Models.CarrinhoViewModel
 
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Sorvete</th>
+      <th scope="col">Preço</th>
+        <th scope="col">Quantidade</th>
+      <th scope="col">Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var item in Model.Carrinho.ItensCarrinho)
+    {
+        <tr>         
+            <td>@item.Produto.Nome</td>
+            <td>@item.Produto.Preco</td>
+            <td>@item.Quantidade</td>
+            <td>@((item.Quantidade * item.Produto.Preco))</td>
+
+            <td>
+                <a asp-action="RemoverDoCarrinho" asp-route-Id="@item.Produto.ProdutoId">Remover</a>
+            </td>
+        </tr>
+    }
+  </tbody> 
+<tfoot>
+    <tr>
+        <td colspan="4">Total</td>
+        <td>@Model.Carrinho.GetCarrinhoTotal()</td>
+    </tr>
+</tfoot>
+
+<div>
+    <a asp-action="LimparCarrinho">Limpar Carrinho</a>
+    <a asp-controller="Produtos" asp-action="ListarTodosProdutos">Continuar Comprando</a>
+</div>
+
+</table>

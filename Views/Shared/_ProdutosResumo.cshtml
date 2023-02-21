@@ -23,6 +23,9 @@
 					<div>
 						<a asp-controller="Produtos" asp-action="Detalhes" asp-route-id="@Model.ProdutoId" class="btn btn-primary">Detalhes</a>
 					</div>
+					<div>
+						<a asp-controller="Carrinho" asp-action="AdicionarAoCarrinho" asp-route-id="@Model.ProdutoId" class="btn btn-primary">Adicionar ao Carrinho</a>
+					</div>
                 </div>
 			</div>
 		</div>
