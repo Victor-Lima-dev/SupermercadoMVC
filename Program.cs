@@ -8,6 +8,12 @@ builder.Services.AddControllersWithViews();
 // registrar banco de dados
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.services.AddSingletone<IHttpContextAccessor, HttpContextAccessor>();
+
+
+builder.services.AddMemoryCache();
+builder.services.AddSession();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -22,6 +28,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseSession();
 
 app.UseAuthorization();
 
