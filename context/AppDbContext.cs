@@ -14,5 +14,7 @@ namespace supermercadoMVC.context
 
         public DbSet<Models.Produto> Produtos { get; set; }
         public DbSet<Models.ItemCarrinho> ItensCarrinho { get; set; }
+        public DbSet<Models.Pedido> Pedidos { get; set; }
+        public DbSet<Models.ItemPedido> ItensPedido { get; set; }
     }
 }

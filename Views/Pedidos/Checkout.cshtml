@@ -1,0 +1,25 @@
+@model supermercadoMVC.Models.Pedido
+
+<div class="container">
+    <form asp-controller="Pedidos" asp-action="Checkout" method="post">
+        <div>
+            <label asp-for="Nome"></label>
+            <input asp-for="Nome" />
+            <span asp-validation-for="Nome"></span>
+        </div>
+        <div>
+            <label asp-for="Sobrenome"></label>
+            <input asp-for="Sobrenome" />
+            <span asp-validation-for="Sobrenome"></span>
+        </div>
+        <div>
+            <label asp-for="Endereco"></label>
+            <input asp-for="Endereco" />
+            <span asp-validation-for="Endereco"></span>
+        </div>
+        <div>
+            <input type="submit" value="Checkout" />
+        </div>
+
+    </form>
+</div>
